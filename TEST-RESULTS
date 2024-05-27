@@ -1,0 +1,25 @@
+Testiranje Black box metodom utvrdjene su sledece greske:
+1. mnozenje odnosno deljenje sa negativnim brojevima je moguce samo ukoliko je prvi broj negativan u suprotnom dobija se ERROR (npr. 2*-9 ili 4/-3 itd) 
+
+2. ukoliko se umesto operatora unesi neki drugi char ukljucujuci i opotreba matematicke zagrade ( ) dobija se ERROR bez objasnjenja u cemu je greska
+
+3. ukoliko se ne unese bilo koji ulaz (broj ili char) vec se odmah pritisne taster Enter dobija se sledeca greska i automatski ce se program iskljuciti bez unosenja reci exit:
+Exception in thread "main" java.lang.StringIndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:52)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:213)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:210)
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:98)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.lang.String.checkIndex(String.java:4881)
+	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:46)
+	at java.base/java.lang.String.charAt(String.java:1582)
+	at Calculator.evaluateExpression(Calculator.java:32)
+	at Calculator.Run(Calculator.java:25)
+	at Start.main(Start.java:19)
+Process finished with exit code 1
+
+4. Da bi se izaslo iz programa mora se uneti rec "exit". U drugim slucajevima upotrebom samo velikih ili kombinacijom velikih i malih slova dobija se ERROR bez objasnjenja.
+
+5. deljenjem 0 dobijamo infinity - ocekivana poruka bi bila can not divide by zero
